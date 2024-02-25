@@ -1,168 +1,147 @@
 const fs = require('fs');
 
-function getAllIndexes(arr, val) {
-    const indexes = []
-    let i = -1;
-    while ((i = arr.indexOf(val, i+1)) !== -1){
-        indexes.push(i);
-    }
-    return indexes;
+const CYCLE_COUNT = 1000000000;
+const FILE_PATH = "input.txt";
+
+const text = fs.readFileSync(FILE_PATH, 'utf8')
+
+const allLines = text.trim().split('\n')
+const puzzle = []
+
+for(const line of allLines){
+    puzzle.push(line.trim().split(""))
 }
 
-function tiltColumnToNorth(column) {
-    const allRocksIndex = getAllIndexes(column, 'O');
-    
-    allRocksIndex.forEach((index) => {
-        let isRockMoving;
-        let j = index;
-        do{
-            const isCellAboveEmpty = column[j-1] === '.';
-            const isCellAboveNotTheEdge = j-1 >= 0;
-            isRockMoving = isCellAboveEmpty && isCellAboveNotTheEdge;
+const height = puzzle.length
+const width = puzzle[0].length
 
-            if(isRockMoving) {
-                column[j-1] = 'O';
-                column[j] = '.';
-                j--;
+/* ---------------------------------------- TO NORTH ---------------------------------------- */
+function sendRocksToNorth() {
+    for(let i = 1; i < height; i++){
+        for(let j = 0; j < width; j++) {
+            if(puzzle[i][j] === 'O'){
+                sendRockToNorth(i, j)
             }
-        } while(isRockMoving)
-    }) 
-    return column
-}
-
-function tiltColumnToSouth(column) {
-    const allRocksIndex = getAllIndexes(column, 'O');
-    
-    allRocksIndex.forEach((index) => {
-        let isRockMoving;
-        let j = index;
-        do{
-            const isCellBelowEmpty = column[j+1] === '.';
-            const isCellBelowNotTheEdge = j+1 < column.length;
-            isRockMoving = isCellBelowEmpty && isCellBelowNotTheEdge;
-
-            if(isRockMoving) {
-                    column[j] = '.';
-                    column[j+1] = 'O';
-                    j++;
-                }
-        } while(isRockMoving)
-    })
-    return column
-}
-
-const tiltRowToWest = tiltColumnToNorth;
-const tiltRowToEast = tiltColumnToSouth;
-
-function getColumn(allRows, colIndex) {
-    const result = []
-    for(let i = 0; i < allRows.length; i++) {
-        result.push(allRows[i][colIndex])
+        }
     }
-    return result;
 }
 
-const getRow = getColumn;
+function sendRockToNorth(rowIndex, colIndex){
+    while(puzzle[rowIndex - 1][colIndex] === '.'){
+        puzzle[rowIndex - 1][colIndex] = 'O'
+        puzzle[rowIndex][colIndex] = '.'
 
-function getAllColumns(allRows){
-    const allColumns = []
-    for(let indexColumn = 0; indexColumn < allRows[0].length; indexColumn++) {
-        allColumns.push(getColumn(allRows, indexColumn))
+        if(rowIndex - 2 >= 0){
+            rowIndex--;
+        }
     }
-    return allColumns;
 }
 
-const getAllRows = getAllColumns;
-
-function getAllRowsAfterACycle(allRows){
-    // displayRows(allRows)
-    
-    const allColumns = getAllColumns(allRows);
-    const allColumnsTiltedToNorth = allColumns.map((col) => {
-        return tiltColumnToNorth(col)
-    })
-    
-    const allRowsTiltedToNorth = getAllRows(allColumnsTiltedToNorth);
-    
-    // displayRows(allRowsTiltedToNorth);
-    
-    const allRowsTiltedToWest = allRowsTiltedToNorth.map((row) => {
-        return tiltRowToWest(row)
-    })
-    
-    // displayRows(allRowsTiltedToWest);
-    
-    const allColumnsTiltedToWest = getAllColumns(allRowsTiltedToWest);
-    const allColumnsTiltedToSouth = allColumnsTiltedToWest.map((col) => {
-        return tiltColumnToSouth(col)
-    })
-    
-    
-    const allRowsTiltedToSouth = getAllRows(allColumnsTiltedToSouth);
-    
-    // displayRows(allRowsTiltedToSouth);
-    
-    const allRowsTiltedToEast = allRowsTiltedToSouth.map((row) => {
-        return tiltRowToEast(row)
-    })
-
-    // displayRows(allRowsTiltedToEast);
-    
-    return allRowsTiltedToEast;
+/* ---------------------------------------- TO SOUTH ---------------------------------------- */
+function sendRocksToSouth() {
+    for(let i = height - 2; i >= 0; i--){
+        for(let j = 0; j < width; j++) {
+            if(puzzle[i][j] === 'O'){
+                sendRockToSouth(i, j)
+            }
+        }
+    }
 }
 
-//Part 2
+function sendRockToSouth(rowIndex, colIndex){
+
+    while(puzzle[rowIndex + 1][colIndex] === '.'){
+        puzzle[rowIndex + 1][colIndex] = 'O'
+        puzzle[rowIndex][colIndex] = '.'
+
+        if(rowIndex + 2 < height) {
+            rowIndex++;
+        }
+    }
+}
+
+/* ---------------------------------------- TO WEST ---------------------------------------- */
+function sendRocksToWest() {
+    for(let i = 0; i < height; i++){
+        for(let j = 1; j < width; j++) {
+
+            if(puzzle[i][j] === 'O'){
+                sendRockToWest(i, j)
+            }
+        }
+    }
+}
+
+function sendRockToWest(rowIndex, colIndex){
+    while(puzzle[rowIndex][colIndex - 1] === '.') {
+        puzzle[rowIndex][colIndex - 1] = 'O'
+        puzzle[rowIndex][colIndex] = '.'
+
+        if(colIndex - 2 >= 0){
+            colIndex--;
+        }
+    }
+}
+
+/* ---------------------------------------- TO EAST ---------------------------------------- */
+function sendRocksToEast() {
+    for(let i = 0; i < height; i++) {
+        for(let j = width - 2; j >= 0; j--) {
+
+            if(puzzle[i][j] === 'O'){
+                sendRockToEast(i, j)
+            }
+        }
+    }
+}
+
+function sendRockToEast(rowIndex, colIndex){
+    while(puzzle[rowIndex][colIndex + 1] === '.'){
+        puzzle[rowIndex][colIndex + 1] = 'O'
+        puzzle[rowIndex][colIndex] = '.'
+
+        if(colIndex + 2 < width){
+            colIndex++;
+        }
+    }
+}
+
+function doCycle(){
+    sendRocksToNorth();
+    sendRocksToWest();
+    sendRocksToSouth();
+    sendRocksToEast();
+}
+
 function getNumberOfRocksInRow(row){
     return row.filter((cell) => cell === 'O').length
 }
 
-function displayRows(rows){
-    console.log("==========")
-    const puzzle = rows.map((row) => row.join(""))
-    puzzle.forEach((row) => console.log(row))
-    console.log("==========")
+const allHash = []
+
+for(let i = 0; i < CYCLE_COUNT; i++){
+    doCycle()
+
+    const str = puzzle.join('')
+    const indexStr = allHash.indexOf(str)
+    if(indexStr === -1) {
+        allHash.push(str)
+    } else {
+        const diff = i - indexStr;
+        while(i < (CYCLE_COUNT-diff)){
+            i += diff;
+        }
+    }
+
+    console.log('i', i)
 }
 
-(async () => {
-    const text = await new Promise((resolve, reject) => {
-        fs.readFile('input.txt', 'utf8', (err, data) => {
-            if (err) {
-                reject(err)
-            } else {
-                resolve(data)
-            }
-        })
-    })
+let result = 0;
+for(let indexRow = 0; indexRow < height; indexRow++) {
+    const multiplicator = height - indexRow;
+    const row = puzzle[indexRow];
+    const numberOfRocks = getNumberOfRocksInRow(row);
+    result += numberOfRocks * multiplicator;
+}
 
-
-    //Part 1 :
-    const allRows = text.split('\n');
-
-    const rowCount = allRows.length;
-    const colCount = allRows[0].length;
-
-    let allTiltedRows = allRows;
-    let timestamp = new Date();
-    const triggerLine = 10000;
-    for(let i = 0; i < 1000 * 1000 * 1000; i++){
-        if(i % (triggerLine) === 0) {
-            console.log('i : ', i);
-            const currentTime = new Date();
-            const timeFor10000Exec = currentTime - timestamp;
-            console.log('Seconds for 10 000 : ', timeFor10000Exec / 1000);
-            console.log('Remeaning time : ', (timeFor10000Exec / 1000) * ((1000000000 - i) / triggerLine) , ' secondes');
-            timestamp = currentTime;
-        }
-        allTiltedRows = getAllRowsAfterACycle(allRows);
-    }
-    
-    let result = 0;
-    for(let indexRow = 0; indexRow < rowCount; indexRow++) {
-        const multiplicator = rowCount - indexRow;
-        const row = allTiltedRows[indexRow];
-        const numberOfRocks = getNumberOfRocksInRow(row);
-        result += numberOfRocks * multiplicator;
-    }
-    
-    console.log('Result :', result);
-})()
+console.log('Result :', result);
