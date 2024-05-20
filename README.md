@@ -76,11 +76,3 @@ Les contributions sont les bienvenues ! Si vous avez une meilleure solution ou u
 3. Commitez vos modifications (`git commit -m 'Ajouter une explication de la contribution'`)
 4. Poussez vers la branche (`git push origin amélioration/ma-contribution`)
 5. Ouvrez une Pull Request
-
-## Licence
-
-Ce projet est sous licence MIT. Voir le fichier [LICENSE](LICENSE) pour plus de détails.
-
----
-
-J'espère que ce README répondra à tes attentes et qu'il sera utile pour organiser et présenter tes solutions de l'Advent of Code !
