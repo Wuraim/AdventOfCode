@@ -23,18 +23,15 @@ Chaque jour de l'Advent of Code a son propre dossier contenant les fichiers de s
 ```
 advent-of-code/
 │
-├── year/
-│   ├── day01/
-│   │   ├── input.txt
-│   │   └── solution.js
-│   ├── day02/
-│   │   ├── input.txt
-│   │   └── solution.js
+├── day1/
+│   ├── input.txt/
+│   ├── part1.js/
+│   ├── part2.js/
 │   └── ...
 └── README.md
 ```
 
-- `year/dayXX/` : Dossier pour chaque jour (et chaque année si nécessaire)
+- `dayXX/` : Dossier pour chaque jour
   - `input.txt` : Le fichier d'entrée pour le défi du jour.
   - `solution.js` : Mon script de solution pour le défi du jour.
 
@@ -52,7 +49,7 @@ Les solutions sont principalement écrites en **Node.js**.
 
 2. Naviguez vers le dossier du jour que vous souhaitez exécuter :
    ```bash
-   cd year/dayXX
+   cd dayXX
    ```
 
 3. Installez les dépendances (si nécessaire) :
