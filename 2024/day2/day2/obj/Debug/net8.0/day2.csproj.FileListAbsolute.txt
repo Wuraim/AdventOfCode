@@ -1,0 +1,15 @@
+C:\Users\g.lorgnier\source\repos\AdventOfCode\2024\day2\day2\bin\Debug\net8.0\day2.exe
+C:\Users\g.lorgnier\source\repos\AdventOfCode\2024\day2\day2\bin\Debug\net8.0\day2.deps.json
+C:\Users\g.lorgnier\source\repos\AdventOfCode\2024\day2\day2\bin\Debug\net8.0\day2.runtimeconfig.json
+C:\Users\g.lorgnier\source\repos\AdventOfCode\2024\day2\day2\bin\Debug\net8.0\day2.dll
+C:\Users\g.lorgnier\source\repos\AdventOfCode\2024\day2\day2\bin\Debug\net8.0\day2.pdb
+C:\Users\g.lorgnier\source\repos\AdventOfCode\2024\day2\day2\obj\Debug\net8.0\day2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\g.lorgnier\source\repos\AdventOfCode\2024\day2\day2\obj\Debug\net8.0\day2.AssemblyInfoInputs.cache
+C:\Users\g.lorgnier\source\repos\AdventOfCode\2024\day2\day2\obj\Debug\net8.0\day2.AssemblyInfo.cs
+C:\Users\g.lorgnier\source\repos\AdventOfCode\2024\day2\day2\obj\Debug\net8.0\day2.csproj.CoreCompileInputs.cache
+C:\Users\g.lorgnier\source\repos\AdventOfCode\2024\day2\day2\obj\Debug\net8.0\day2.sourcelink.json
+C:\Users\g.lorgnier\source\repos\AdventOfCode\2024\day2\day2\obj\Debug\net8.0\day2.dll
+C:\Users\g.lorgnier\source\repos\AdventOfCode\2024\day2\day2\obj\Debug\net8.0\refint\day2.dll
+C:\Users\g.lorgnier\source\repos\AdventOfCode\2024\day2\day2\obj\Debug\net8.0\day2.pdb
+C:\Users\g.lorgnier\source\repos\AdventOfCode\2024\day2\day2\obj\Debug\net8.0\day2.genruntimeconfig.cache
+C:\Users\g.lorgnier\source\repos\AdventOfCode\2024\day2\day2\obj\Debug\net8.0\ref\day2.dll
