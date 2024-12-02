@@ -1,7 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using System.Numerics;
 
-List<string> input = File.ReadAllLines("C:\\Users\\g.lorgnier\\source\\repos\\AdventOfCode\\2024\\day2\\day2\\input.txt").ToList();
+List<string> input = File.ReadAllLines("C:\\Users\\lorgn\\project\\AdventOfCode\\2024\\day2\\day2\\input.txt").ToList();
 
 int nbCorrectLinesPart1 = 0;
 foreach (string line in input)
@@ -41,44 +41,49 @@ foreach (string line in input)
 {
     List<int> allValue = line.Split(' ').Select((val) => int.Parse(val)).ToList();
 
-    bool isIncreasing = true;
-    if (allValue[0] != allValue[1])
-    {
-        isIncreasing = allValue[0] < allValue[1];
-    } else
-    {
-        isIncreasing = allValue[1] < allValue[2];
-    }
+    bool isCounting = false;
 
-    bool isCorrect = true;
-    bool hasNotMadeOneMistake = true;
-
-    for (int i = 0; i < allValue.Count - 1; i++)
+    // On essaie toutes les possibilités de mauvaise erreur et ceux sans erreur également
+    for(int i = -1; i < allValue.Count; i++)
     {
-        if (isIncreasing)
+        List<int> duplicate = new List<int>(allValue);
+        if (i > -1)
         {
-            bool growMoreThan1 = allValue[i] + 1 <= allValue[i + 1];
-            bool growLessThan3 = allValue[i] + 3 >= allValue[i + 1];
-            isCorrect = growMoreThan1 && growLessThan3;
-        }
-        else
-        {
-            bool decreaseMoreThan1 = allValue[i] - 1 >= allValue[i + 1];
-            bool decreaseLessThan3 = allValue[i] - 3 <= allValue[i + 1];
-            isCorrect = decreaseMoreThan1 && decreaseLessThan3;
+            duplicate.RemoveAt(i);
         }
 
-        if (isCorrect == false && hasNotMadeOneMistake == true) {
-            hasNotMadeOneMistake = false;
-        } else if (isCorrect == false) { 
+        bool isIncreasing = duplicate[0] < duplicate[1];
+        bool isCorrect = true;
+
+        for (int j = 0; j < duplicate.Count - 1; j++)
+        {
+            if (isIncreasing)
+            {
+                bool growMoreThan1 = duplicate[j] + 1 <= duplicate[j + 1];
+                bool growLessThan3 = duplicate[j] + 3 >= duplicate[j + 1];
+                isCorrect = growMoreThan1 && growLessThan3;
+            }
+            else
+            {
+                bool decreaseMoreThan1 = duplicate[j] - 1 >= duplicate[j + 1];
+                bool decreaseLessThan3 = duplicate[j] - 3 <= duplicate[j + 1];
+                isCorrect = decreaseMoreThan1 && decreaseLessThan3;
+            }
+
+            if (isCorrect == false) { break; }
+        }
+
+        if (isCorrect) {
+            isCounting = true;
             break; 
         }
     }
 
-    if (isCorrect)
+    if (isCounting)
     {
         nbCorrectLinesPart2++;
     }
 }
 
 Console.WriteLine(nbCorrectLinesPart2.ToString());
+Console.Read();
