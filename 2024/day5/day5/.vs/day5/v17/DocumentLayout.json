@@ -1,0 +1,105 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\lorgn\\project\\AdventOfCode\\2024\\day5\\day5\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{FB737360-A5EB-4D5A-BCA9-B7F066A3EFA4}|day5\\day5.csproj|c:\\users\\lorgn\\project\\adventofcode\\2024\\day5\\day5\\day5\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FB737360-A5EB-4D5A-BCA9-B7F066A3EFA4}|day5\\day5.csproj|solutionrelative:day5\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FB737360-A5EB-4D5A-BCA9-B7F066A3EFA4}|day5\\day5.csproj|c:\\users\\lorgn\\project\\adventofcode\\2024\\day5\\day5\\day5\\test_2.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{FB737360-A5EB-4D5A-BCA9-B7F066A3EFA4}|day5\\day5.csproj|solutionrelative:day5\\test_2.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FB737360-A5EB-4D5A-BCA9-B7F066A3EFA4}|day5\\day5.csproj|c:\\users\\lorgn\\project\\adventofcode\\2024\\day5\\day5\\day5\\test_1.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{FB737360-A5EB-4D5A-BCA9-B7F066A3EFA4}|day5\\day5.csproj|solutionrelative:day5\\test_1.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 3022,
+          "SelectedChildIndex": 8,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{13b12e3e-c1b4-4539-9371-4fe9a0d523fc}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "test_2.txt",
+              "DocumentMoniker": "C:\\Users\\lorgn\\project\\AdventOfCode\\2024\\day5\\day5\\day5\\test_2.txt",
+              "RelativeDocumentMoniker": "day5\\test_2.txt",
+              "ToolTip": "C:\\Users\\lorgn\\project\\AdventOfCode\\2024\\day5\\day5\\day5\\test_2.txt",
+              "RelativeToolTip": "day5\\test_2.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2024-12-07T11:29:07.891Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "test_1.txt",
+              "DocumentMoniker": "C:\\Users\\lorgn\\project\\AdventOfCode\\2024\\day5\\day5\\day5\\test_1.txt",
+              "RelativeDocumentMoniker": "day5\\test_1.txt",
+              "ToolTip": "C:\\Users\\lorgn\\project\\AdventOfCode\\2024\\day5\\day5\\day5\\test_1.txt",
+              "RelativeToolTip": "day5\\test_1.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2024-12-07T11:29:04.689Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\lorgn\\project\\AdventOfCode\\2024\\day5\\day5\\day5\\Program.cs",
+              "RelativeDocumentMoniker": "day5\\Program.cs",
+              "ToolTip": "C:\\Users\\lorgn\\project\\AdventOfCode\\2024\\day5\\day5\\day5\\Program.cs",
+              "RelativeToolTip": "day5\\Program.cs",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAAADAAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-05T21:32:00.443Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 881,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
